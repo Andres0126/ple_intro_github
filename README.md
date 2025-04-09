@@ -2,4 +2,4 @@
 
 # INTRODUCCIÓN
 
-Este es un ejercicio de introducción a la génetica, miman terriblesmente
+Este es un ejercicio 
