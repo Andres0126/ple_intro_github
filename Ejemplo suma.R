@@ -1,8 +1,8 @@
 #Este es un ejemplo de suma 
 a <- 5 
-b <- 3 
+b <- 7 
 Resultado <- a+b
-cat("La suma de ", a,"más ", b, "es ", a+b)
+cat("La suma de ", a,"mÃ¡s ", b, "es ", a+b)
   
 
 
