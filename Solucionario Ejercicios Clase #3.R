@@ -46,3 +46,31 @@ cat("Vector ordenado ->", numeros, "\n")
 
 ###########################################################################
 
+#Mismo ejercicio con bucle while 
+
+numeros <- c(24,3,1,8,23,54,90,10,2)
+n <- length(numeros)
+
+cambio <- TRUE
+pasada <- 1  # Para contar cuántas pasadas hacemos
+
+while (cambio) {
+  cat("Pasada", pasada, "->", numeros, "\n")  # Imprime antes de empezar la pasada
+  
+  cambio <- FALSE
+  j <- 1
+  
+  while (j < n) {
+    if (numeros[j] < numeros[j + 1]) {
+      temp <- numeros[j]
+      numeros[j] <- numeros[j + 1]
+      numeros[j + 1] <- temp
+      cambio <- TRUE
+    }
+    j <- j + 1
+  }
+  
+  pasada <- pasada + 1  # Avanzamos el contador de pasadas
+}
+
+cat("Vector ordenado ->", numeros, "\n")
