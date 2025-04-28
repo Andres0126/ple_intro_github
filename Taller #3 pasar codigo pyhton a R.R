@@ -1,6 +1,6 @@
 # No necesitas importar librerías para data.frame básico
 conos <- data.frame(
-  Sabor = c('mora', 'vainilla', 'chocolate', 'mora', 'chocolate'),
+  Sabor = c('mora', 'vainilla', 'chocolate', 'cebolla', 'chococrispi'),
   precio = c(3500, 4700, 6500, 5200, 5700)
 )
 
@@ -35,4 +35,45 @@ conos[sample(nrow(conos), 1)] #R no sabe si estás seleccionando una fila o una c
 summary(conos) #Entrega todos los datos de abajo
 #Devuelve valores como: count, mean, std, min, 25%, 50%, 75%, max para las columnas numéricas ( precio).
 
+str(conos) # Muestra el tipo de objeto ( data.frame), el número, el tipo de dato de cada columna ( Factor, Numeric,Character, etc.), los primeros valores de cada columna
+
+#R no maneja indices, El índice son implícitamente las filas : 1, 2, 3, 4, etc.
+
+rownames(conos) #acceder a los números de fila 
+as.numeric(rownames(conos)) #Si queremos los indices como numeros 
+
+conos[4, ] #ubicación por índice numérico.
+
+#Seleccione la fila 1 en adelante, la fila 2 a la 4 y las fila 1 y 4.
+
+#La fila 1 en adelante
+
+conos
+conos[1:nrow(conos), ]
+
+#la fila 2 a la 4
+
+conos[2:4, ]
+
+#las fila 1 y 4.
+
+conos[c(1,4), ]
+
+#Selecciona el precio de la fila 3
+
+conos[3, "precio"]
+
+
+# Cambiar el indice numerico por la columna "Sabor"
+
+conos_i <- conos
+
+
+rownames(conos_i) <- conos_i$Sabor
+
+
+conos_i$Sabor <- NULL
+
+
+conos_i
 
