@@ -78,9 +78,9 @@ conos_i["chococrispi", ]
 conos[conos[ ,"precio"]>5000, ] 
 conos[conos$precio>5000, ]
 
-#Seleccionar los sabores de precios entre 3 mil y 5 mil. Seleccione los sabores de chocolate con un precio de 5100
+#Seleccionar los sabores de precios entre 3 mil y 5 mil. 
 
-conos[conos$precio >= 3000 & conos$precio <= 5000, c('Sabor')]
+conos[conos$precio >= 3000 & conos$precio <= 5000, c('Sabor')] #El vector c('Sabor') arroja solo la columna sabor.
 
-conos[conos[ ,"precio"]>=3000 & conos[ , "precio"]<=5500, c('Sabor')]
+conos[conos[ ,"precio"]>=3000 & conos[ , "precio"]<=5500,]  #Si le quitamos el vector c('sabor') arroja la tabla completa con los valores dentro del rango
 
