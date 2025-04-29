@@ -39,7 +39,7 @@ str(conos) # Muestra el tipo de objeto ( data.frame), el número, el tipo de dato
 
 #R no maneja indices, El índice son implícitamente las filas : 1, 2, 3, 4, etc.
 
-rownames(conos) #acceder a los números de fila 
+rownames(conos) #Acceder a los números de fila 
 as.numeric(rownames(conos)) #Si queremos los indices como numeros 
 
 conos[4, ] #ubicación por índice numérico.
@@ -61,19 +61,26 @@ conos[c(1,4), ]
 
 #Selecciona el precio de la fila 3
 
-conos[3, "precio"]
+conos[5, "Sabor"]
 
 
-# Cambiar el indice numerico por la columna "Sabor"
+# Cambiar el indice númerico por la columna "Sabor"
 
-conos_i <- conos
+conos_i <- conos #Copiamos el data.frame original
+#make.unique() agregará .1, .2, etc., a los nombres repetidos
+rownames(conos_i) <- make.unique(as.character(conos_i$Sabor)) ##Creamos índices únicos a partir de la columna "Sabor"
+conos_i$Sabor <- NULL #Eliminamos la columna "Sabor" para que no esté repetida
+conos_i#Mostramos el resultado
+conos_i["chococrispi", ]
 
+#Escoger los conos que tienen un precio mayor a 5000
 
-rownames(conos_i) <- conos_i$Sabor
+conos[conos[ ,"precio"]>5000, ] 
+conos[conos$precio>5000, ]
 
+#Seleccionar los sabores de precios entre 3 mil y 5 mil. Seleccione los sabores de chocolate con un precio de 5100
 
-conos_i$Sabor <- NULL
+conos[conos$precio >= 3000 & conos$precio <= 5000, c('Sabor')]
 
-
-conos_i
+conos[conos[ ,"precio"]>=3000 & conos[ , "precio"]<=5500, c('Sabor')]
 
