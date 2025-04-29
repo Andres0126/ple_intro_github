@@ -18,7 +18,7 @@ for (var in a){
   e <- a[3]/2
   
 }
-
+ 
 if (b > c & b > e) {
   print(a[1])
   }
