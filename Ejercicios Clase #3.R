@@ -1,7 +1,9 @@
-#Ejercici? 1. Un c?digo que multiplique dos vectores punto a punto 
+#Ejercici? 1. Un código que multiplique dos vectores punto a punto 
 #y sume los resultados. 
 
-a <- c(3,24,1)
+#Usando ciclo for
+
+a <- c(3,24,1) 
 b <- c(43,5,10)
 m <- a*b
 for (var in m){
@@ -9,25 +11,24 @@ for (var in m){
 }
 print (n)
 
-#Ejercicio 2. Un c?digo que calcule el m?ximo de un vector.
+#Usando ciclo while
 
-a <- c(2,7,1)
-for (var in a){
-  b <- a[1]/2
-  c <- a[2]/2
-  e <- a[3]/2
-  
+a <- c(3,24,1) 
+b <- c(43,5,10)
+
+resultado <- 0
+i <- 1
+
+while (i <= length(a)) {
+  resultado <- resultado + a[i] * b[i]
+  i <- i + 1
 }
- 
-if (b > c & b > e) {
-  print(a[1])
-  }
-if (c > b & c > e){
-     print (a[2])
-  }
-if (e > b & e > c){
-      print(a[3])
-  }
+
+print(resultado)
+
+#Ejercicio 2. Un código que calcule el m?ximo de un vector.
+
+
 
 #Ejercicio hecho por el profesor 
 vec1 <- c(1,2,3,1)
